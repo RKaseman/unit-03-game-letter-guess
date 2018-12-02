@@ -1,18 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Game</title>
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <!-- css reset -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/EMreset.css"> -->
+    <!-- custom style -->
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 </head>
 
 <body>
-
+    <header class=flex-container>
+        <h1>Are you psychic <em>??</em></h1>
+        <h2>(No...but let's pretend)</h2>
+    </header>
     <div>
         <p>Guess what letter I'm thinking of.</p>
     </div>
@@ -23,7 +28,7 @@
         <p id="losses"></p>
     </div>
     <div>
-        <p id="guessLeft"></p>
+        <p id="left"></p>
     </div>
     <div>
         <p id="used"></p>
@@ -35,4 +40,6 @@
     <script src="assets/javascript/game.js"></script>
 
 </body>
+
 </html>
+

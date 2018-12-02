@@ -1,0 +1,174 @@
+
+* {
+    box-sizing: border-box;
+}
+
+em {
+    font-style: italic;
+}
+
+html {
+    height: 100vh;
+}
+
+html, body {
+    font-family: "Shojumaru", cursive, sans-serif;
+    color: #00ffff;
+    text-shadow: 2px 2px 4px #000000;
+    background: linear-gradient(#00ddff, #004466) no-repeat center fixed;
+}
+
+body {
+    width: 640px;
+    box-shadow: 4px 4px 16px #000022, 0px 0px 16px #000022;
+    border: 4px solid #002266;
+    margin: 16px auto;
+}
+
+/* header colors */
+header {
+    text-align: center;
+    border: 4px solid #002266;
+    padding: 16px 64px;
+	background: linear-gradient(32deg, #004488, #005599, #00aacc, #005599, #004488);
+	background-size: 200% 200%;
+	-webkit-animation: gradient 16s ease infinite;
+	-moz-animation: gradient 16s ease infinite;
+	animation: gradient 16s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+
+    0% {
+		background-position: 0% 50%
+	}
+
+    50% {
+		background-position: 100% 50%
+	}
+
+    100% {
+		background-position: 0% 50%
+	}
+
+}
+
+@-moz-keyframes gradient {
+
+    0% {
+		background-position: 0% 50%
+	}
+
+    50% {
+		background-position: 100% 50%
+	}
+
+    100% {
+		background-position: 0% 50%
+	}
+
+}
+
+@keyframes gradient {
+
+    0% {
+		background-position: 0% 50%
+	}
+
+    50% {
+		background-position: 100% 50%
+	}
+
+    100% {
+		background-position: 0% 50%
+	}
+
+}
+/* ^ */
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, h3, h4 {
+    margin: 8px auto;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-family: "Italianno", cursive, sans-serif;
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #00a800;
+}
+
+h4 {
+    font-size: 0.8em;
+}
+
+hr {
+    border-color: #00ffff;
+}
+
+#scoreDisplay {
+    background: #004488;
+    line-height: 32px;
+    padding: 0 16px 0 16px;
+    border: 4px solid #002266;
+}
+
+#targetScore, #playerTotal, #wins, #losses {
+    background-color: #002266;
+    color: #00ffff;
+    padding: 2px 16px;
+}
+
+#divCanvas {
+    position: relative;
+    text-align: center;
+}
+
+#mycanvas {
+    width: 100%;
+    height: 100%;
+    border: 4px solid #002266;
+}
+
+button {
+    position: absolute;
+    cursor: pointer;
+    width: 48.5%;
+    height: 48.5%;
+    opacity: 0.15;
+    background-color: #ffffff;
+    border: none;
+    margin: 4px;
+}
+
+#button1 {
+    left: 0;
+    top: 0;
+}
+
+#button2 {
+    right: 0;
+    top: 0;
+}
+
+#button3 {
+    left: 0;
+    bottom: 0;
+}
+
+#button4 {
+    right: 0;
+    bottom: 0;
+}
+

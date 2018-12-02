@@ -1,56 +1,69 @@
 
-// pseudocode
-// display accurate win tally
-// display accurate loss tally
-// compare between userGuess and computerLetter made functional
-// warn if key isn't a letter
-// plug messages into div
-// remove current message from div
 var letters = ["a", "e", "i", "o", "u"];
-var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+
+var targetLetter = letters[Math.floor(Math.random() * letters.length)];
 var wins = 0;
 var losses = 0;
 var guessesLeft = 2;
 var guessedLetters = [];
-var computerLetter;
-console.log("computerGuess = " + computerGuess);
+console.log("targetLetter = " + targetLetter);
+console.log("wins = " + wins);
+console.log("losses = " + losses);
+console.log("guessesLeft = " + guessesLeft);
+console.log("guessedLetters = " + guessedLetters);
+
+function gameSetup() {
+    document.querySelector("#wins").innerHTML = "Wins: " + wins;
+    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+    document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
+    document.querySelector("#used").innerHTML = "Guesses made: " + guessedLetters;
+}
+
+// gameSetup();
 
 function subtractGuessesLeft() {
     guessesLeft - 1;
-    document.querySelector("#guessLeft").innerHTML = "Guesses left: " + guessesLeft;
-};
-
-function newComputerLetter() {
-    this.computerLetter = this.letters[Math.floor(Math.random() * this.letters.length)];
+    document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
 };
 
 function addGuessedLetters() {
     document.querySelector("#used").innerHTML = "Your guesses: " + guessedLetters;
 };
 
-newComputerLetter();
-subtractGuessesLeft();
+// subtractGuessesLeft();
 
 document.onkeyup = function(keyPress) {
+    // console.log(keyPress);
+    guessesLeft - 1;
+    console.log("guessesLeft = " + guessesLeft);
+    document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
     var userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
-    console.log(userGuess);
+    console.log("userGuess = " + userGuess);
 
-    if (userGuess !== computerLetter) {
-        guessesLeft - 1;
-        guessedLetters.push(userGuess);
-        subtractGuessesLeft();
-        addGuessedLetters();
-        console.log("guessedLetters = " + guessedLetters);
-    }
     if (guessesLeft > 0) {
-        if (userGuess === computerLetter) {
+        // if (userGuess !== targetLetter) {
+        //     console.log("targetLetter = " + targetLetter);
+        //     guessedLetters.push(userGuess);
+        //     subtractGuessesLeft();
+        //     addGuessedLetters();
+        //     console.log("guessedLetters = " + guessedLetters);
+        // }
+            if (userGuess === targetLetter) {
             wins++;
             document.querySelector("#wins").innerHTML = "Wins: " + wins;
             document.querySelector("#message").innerHTML = "you win";
-        } else if (guessesLeft === 0) {
-            losses++;
-            document.querySelector("#message").innerHTML = "Losses: " + losses;
-            document.querySelector("#message").innerHTML = "you lose";
+            subtractGuessesLeft();
         }
+        // if (userGuess !== targetLetter) {
+        //     losses++;
+        //     document.querySelector("#message").innerHTML = "Losses: " + losses;
+        //     document.querySelector("#message").innerHTML = "you lose";
+        // }
+        // } else if (guessesLeft === 0) {
+        //     losses++;
+        //     document.querySelector("#message").innerHTML = "Losses: " + losses;
+        //     document.querySelector("#message").innerHTML = "you lose";
+        // }
     }
 };
+
