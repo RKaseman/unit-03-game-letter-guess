@@ -5,10 +5,6 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 2;
 var guessArray = [];
-console.log("wins = " + wins);
-console.log("losses = " + losses);
-console.log("guessesLeft = " + guessesLeft);
-console.log("guessArray = " + guessArray);
 
 gameSetup();
 
@@ -23,12 +19,13 @@ function gameSetup() {
 
 function targetLetter() {
     pick = letters[Math.floor(Math.random() * letters.length)];
-    console.log("pick function = " + pick);
+    console.log("targetLetter() = " + pick);
     return pick;
 }
 
 function addGuessedLetters() {
     document.querySelector("#used").innerHTML = "Your guesses: " + guessArray;
+    console.log("guessArray = " + guessArray);
 };
 
 document.onkeyup = function (keyPress) {
@@ -38,7 +35,6 @@ document.onkeyup = function (keyPress) {
     console.log("userGuess = " + userGuess);
     guessArray.push(userGuess);
     addGuessedLetters();
-    console.log("guessArray = " + guessArray);
 
     if (guessesLeft > 0) {
         // if (userGuess !== pick) {
@@ -57,7 +53,7 @@ document.onkeyup = function (keyPress) {
             gameSetup();
             console.log("pick function win = " + pick);
             console.log("wins = " + wins);
-        } else if (guessesLeft === 0 && userGuess !== pick) {
+        } else if (userGuess !== pick) {
             losses++;
             document.querySelector("#losses").innerHTML = "Losses: " + losses;
             document.querySelector("#message").innerHTML = "Lose. You're not psychic.";
