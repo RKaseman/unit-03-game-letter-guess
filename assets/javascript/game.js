@@ -46,7 +46,7 @@ document.onkeyup = function (keyPress) {
             // guessesLeft--;
             // document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
             gameSetup();
-            // console.log("pick function win = " + pick);
+            console.log("targetLetter() win = " + pick);
             // console.log("wins = " + wins);
         } else if (guessesLeft >= 0 && userGuess !== pick) {
             document.querySelector("#losses").innerHTML = "Losses: " + losses;
@@ -59,7 +59,7 @@ document.onkeyup = function (keyPress) {
                 document.querySelector("#losses").innerHTML = "Losses: " + losses;
                 document.querySelector("#message").innerHTML = "You lose. Game restarted.";
                 gameSetup();
-                // console.log("pick function lose = " + pick);
+                console.log("targetLetter() lose = " + pick);
                 // console.log("losses = " + losses);
             };
         };
