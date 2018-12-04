@@ -32,10 +32,10 @@ function addGuessedLetters() {
 
 document.onkeyup = function (keyPress) {
     // if (keyPress.keyCode === /^[A-Za-z]+$/) {
-        console.log("guessesLeft = " + guessesLeft);
+        // console.log("guessesLeft = " + guessesLeft);
         document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
         var userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
-        console.log("userGuess = " + userGuess);
+        // console.log("userGuess = " + userGuess);
         guessArray.push(userGuess);
         addGuessedLetters();
 
@@ -59,7 +59,7 @@ document.onkeyup = function (keyPress) {
                 document.querySelector("#losses").innerHTML = "Losses: " + losses;
                 document.querySelector("#message").innerHTML = "You lose. Game restarted.";
                 gameSetup();
-                console.log("pick function lose = " + pick);
+                // console.log("pick function lose = " + pick);
                 // console.log("losses = " + losses);
             };
         };
