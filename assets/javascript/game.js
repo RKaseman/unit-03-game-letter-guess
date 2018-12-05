@@ -5,66 +5,81 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 2;
 var guessArray = [];
+var userGuess;
 
 gameSetup();
+document.querySelector("#message").innerHTML = "Waiting for a guess...";
 
 function gameSetup() {
     targetLetter();
+    console.log("targetLetter() = " + computerPick);
     document.querySelector("#wins").innerHTML = "Wins: " + wins;
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
     document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
     document.querySelector("#used").innerHTML = "Your guesses: " + guessArray;
-    document.querySelector("#message").innerHTML = "Waiting for a guess...";
     guessesLeft = 2;
     guessArray = [];
 };
 
 function targetLetter() {
-    pick = letters[Math.floor(Math.random() * letters.length)];
-    console.log("targetLetter() = " + pick);
-    return pick;
+    computerPick = letters[Math.floor(Math.random() * letters.length)];
+    return computerPick;
 };
 
-function addGuessedLetters() {
+function addToGuessArray() {
+    guessArray.push(userGuess);
     document.querySelector("#used").innerHTML = "Your guesses: " + guessArray + " ";
-    console.log("addGuessedLetters() = " + guessArray);
+    console.log("addToGuessArray() = " + guessArray);
 };
+
+// 
+// function validate(strValue) {
+// var objRegExp  = /^[a-z]+$/;
+// var objRegExp  = /^[a-z\u00C0-\u00ff\s]+$/;
+// return objRegExp.test(strValue);
+//   }
+// 
+
+// 
+// function myFunction() {
+var str = "The best things in life are free";
+var patt = new RegExp("e");
+var res = patt.test(str);
+document.getElementById("demo").innerHTML = res;
+// }
+// 
+
+// 
+// RegExpObject.test(string)
+// 
 
 document.onkeyup = function (keyPress) {
-    // if (keyPress.keyCode === /^[A-Za-z]+$/) {
-        // console.log("guessesLeft = " + guessesLeft);
-        document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
-        var userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
-        // console.log("userGuess = " + userGuess);
-        guessArray.push(userGuess);
-        addGuessedLetters();
-
-        if (guessesLeft >= 0 && userGuess === pick) {
-            wins++;
-            document.querySelector("#wins").innerHTML = "Wins: " + wins;
-            document.querySelector("#message").innerHTML = "Win <em>!!</em> (but you're not psychic).";
-            // guessesLeft--;
-            // document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
-            gameSetup();
-            console.log("targetLetter() win = " + pick);
-            // console.log("wins = " + wins);
-        } else if (guessesLeft >= 0 && userGuess !== pick) {
-            document.querySelector("#losses").innerHTML = "Losses: " + losses;
-            document.querySelector("#message").innerHTML = "Incorrect guess. You're not psychic.";
-            guessesLeft--;
-            document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
-            // console.log("losses = " + losses);
-            if (guessesLeft === 0) {
-                losses++;
-                document.querySelector("#losses").innerHTML = "Losses: " + losses;
-                document.querySelector("#message").innerHTML = "You lose. Game restarted.";
-                gameSetup();
-                console.log("targetLetter() lose = " + pick);
-                // console.log("losses = " + losses);
-            };
-        };
-    // } else {
-    //     document.querySelector("#message").innerHTML = "invalid choice";
-    // };
+    guessesLeft--;
+    document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
+    userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
+    console.log("userGuess = " + userGuess);
+    // var test = /^[A-Za-z]+$/;
+    if (userGuess === 1) {
+        document.querySelector("#message").innerHTML = "invalid choice";
+        return;
+    } else {
+        addToGuessArray();
+    }
+    if (guessesLeft >= 0 && userGuess === computerPick) {
+        wins++;
+        document.querySelector("#wins").innerHTML = "Wins: " + wins;
+        document.querySelector("#message").innerHTML = "Win <em>!!</em> (but you're not psychic).";
+        gameSetup();
+        console.log("targetLetter() win = " + computerPick);
+    } else if (guessesLeft >= 0 && userGuess !== computerPick) {
+        document.querySelector("#losses").innerHTML = "Losses: " + losses;
+        document.querySelector("#message").innerHTML = "Incorrect guess. You're not psychic.";
+    };
+    if (guessesLeft === 0) {
+        losses++;
+        document.querySelector("#message").innerHTML = "You lose. Game restarted.";
+        gameSetup();
+        console.log("targetLetter() lose = " + computerPick);
+    };
 };
 
