@@ -32,24 +32,12 @@ function addToGuessArray() {
     console.log("addToGuessArray() = " + guessArray);
 };
 
-// 
-// function myFunction() {
-var str = "The best things in life are free";
-var patt = new RegExp("e");
-var res = patt.test(str);
-document.getElementById("demo").innerHTML = res;
-// }
-// 
-
-// 
-// RegExpObject.test(string)
-// 
-
 document.onkeyup = function (keyPress) {
     userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
     console.log("userGuess = " + userGuess);
-    // var test = /^[A-Za-z]+$/;
-    if (userGuess === "a" || userGuess === "e" || userGuess === "i" || userGuess === "o" || userGuess === "u") {
+    var test = letters.includes(userGuess);
+    console.log("test = " + test);
+    if (test === true) {
         guessesLeft--;
         document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
         addToGuessArray();
@@ -65,6 +53,7 @@ document.onkeyup = function (keyPress) {
         console.log("targetLetter() win = " + computerPick);
     } else {
         document.querySelector("#message").innerHTML = "Incorrect guess. You're not psychic.";
+        return;
     }
     if (guessesLeft === 0) {
         losses++;
