@@ -17,7 +17,7 @@ function gameSetup() {
     guessArray = [];
     document.querySelector("#wins").innerHTML = "Wins: " + wins;
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
-    document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
+    document.querySelector("#guessCount").innerHTML = "Guesses left: " + guessesLeft;
     document.querySelector("#used").innerHTML = "Your guesses: " + guessArray;
 };
 
@@ -35,29 +35,28 @@ function addToGuessArray() {
 document.onkeyup = function (keyPress) {
     userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
     console.log("userGuess = " + userGuess);
-    var test = letters.includes(userGuess);
-    console.log("test = " + test);
-    if (test === true) {
-        guessesLeft--;
-        document.querySelector("#left").innerHTML = "Guesses left: " + guessesLeft;
-        addToGuessArray();
-    } else {
-        document.querySelector("#message").innerHTML = "invalid choice";
+    var inArray = letters.includes(userGuess);
+    console.log("inArray = " + inArray);
+
+    if (inArray === false) {
+        document.querySelector("#message").innerHTML = "'" + userGuess + "'" + " is not a vowel.<br/>Guess again.";
         return;
-    }
-    if (guessesLeft >= 1 && userGuess === computerPick) {
+    } else if (guessesLeft > 0 && userGuess === computerPick) {
+        addToGuessArray();
         wins++;
         document.querySelector("#wins").innerHTML = "Wins: " + wins;
-        document.querySelector("#message").innerHTML = "Win <em>!!</em> (but you're not psychic).";
+        document.querySelector("#message").innerHTML = "Win <em>!!</em><br/>(but you're not psychic).";
         gameSetup();
         console.log("targetLetter() win = " + computerPick);
-    } else {
-        document.querySelector("#message").innerHTML = "Incorrect guess. You're not psychic.";
+    } else if (guessesLeft > 1 && userGuess !== computerPick) {
+        guessesLeft--;
+        document.querySelector("#guessCount").innerHTML = "Guesses left: " + guessesLeft;
+        addToGuessArray();
+        document.querySelector("#message").innerHTML = "'" + userGuess + "'" + " is incorrect.<br/>Guess again.";
         return;
-    }
-    if (guessesLeft === 0) {
+    } else if (guessesLeft === 1 && userGuess !== computerPick) {
         losses++;
-        document.querySelector("#message").innerHTML = "You lose. Game restarted.";
+        document.querySelector("#message").innerHTML = "You lose.<br/>Game restarted.";
         gameSetup();
         console.log("targetLetter() lose = " + computerPick);
     }

@@ -17,17 +17,30 @@
     <header class=flex-container>
         <!-- <img src="./assets/images/blue-crystal-ball.png" alt="crystal ball"> -->
         <!-- <img src="./assets/images/game-crystal-ball-bkg.webp" alt="crystal ball"> -->
-        <h1>Are you psychic <em>??</em></h1>
+        <h1>Are You Psychic<em>??</em></h1>
         <!-- <img src="./assets/images/blue-crystal-ball.png" alt="crystal ball"> -->
         <!-- <img src="./assets/images/game-crystal-ball-bkg.webp" alt="crystal ball"> -->
     </header>
-        <h2>(No...but let's pretend)</h2>
-        <h3>Guess what letter I'm thinking of.</h3>
+    <h2>(No, but let's pretend)</h2>
+    <div class="flex-container">
+        <div id="thinkLeftLg">
+            <div id="thinkLeftMd">
+                <div id="thinkLeftSm"></div>
+            </div>
+        </div>
+        <h3>Guess which vowel I'm thinking of.</h3>
+        <div id="thinkRightLg">
+            <div id="thinkRightMd">
+                <div id="thinkRightSm"></div>
+            </div>
+        </div>
+    </div>
     <div id="game">
-        <p id="demo"></p>
-        <p id="wins"></p>
-        <p id="losses"></p>
-        <p id="left"></p>
+        <div class="flex-container">
+            <p id="wins"></p>
+            <p id="losses"></p>
+        </div>
+        <p id="guessCount"></p>
         <p id="used"></p>
         <p id="message"></p>
     </div>
