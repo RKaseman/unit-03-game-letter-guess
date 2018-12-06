@@ -15,8 +15,8 @@ function gameSetup() {
     console.log("targetLetter() = " + computerPick);
     guessesLeft = 2;
     guessArray = [];
-    document.querySelector("#wins").innerHTML = "Wins: " + wins;
-    document.querySelector("#losses").innerHTML = "Losses: " + losses;
+    document.querySelector("#wins").innerHTML = "Wins<hr/>" + wins;
+    document.querySelector("#losses").innerHTML = "Losses<hr/>" + losses;
     document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guesses Left";
     document.querySelector("#used").innerHTML = "You've Guessed: " + guessArray;
 };
@@ -44,10 +44,8 @@ document.onkeyup = function (keyPress) {
     } else if (guessesLeft > 0 && userGuess === computerPick) {
         addToGuessArray();
         wins++;
-        document.querySelector("#wins").innerHTML = "Wins: " + wins;
         document.querySelector("#message").innerHTML = "Win <em>!!</em><br/>(but you're not psychic).";
         gameSetup();
-        // console.log("targetLetter() win = " + computerPick);
     } else if (guessesLeft > 1 && userGuess !== computerPick) {
         guessesLeft--;
         document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guesses Left";
@@ -58,7 +56,6 @@ document.onkeyup = function (keyPress) {
         losses++;
         document.querySelector("#message").innerHTML = "It was <strong>'" + computerPick + "'</strong>. You Lose.<br/>Game Restarted.";
         gameSetup();
-        // console.log("targetLetter() lose = " + computerPick);
     }
 };
 
