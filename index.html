@@ -16,20 +16,20 @@
 </head>
 
 <body>
-    <header class=flex-container>
+    <header>
         <h1>Are You Psychic<em>??</em></h1>
+        <h2>(No, but let's pretend)</h2>
     </header>
-    <h2>(No, but let's pretend)</h2>
     <div class="flex-container">
-        <div id="thinkLeftLg">
-            <div id="thinkLeftMd">
-                <div id="thinkLeftSm"></div>
+        <div class="think-left-parent">
+            <div class="think-left-first-child">
+                <div class="think-left-second-child"></div>
             </div>
         </div>
         <h3>Guess which vowel I'm thinking of.</h3>
-        <div id="thinkRightLg">
-            <div id="thinkRightMd">
-                <div id="thinkRightSm"></div>
+        <div class="think-right-parent">
+            <div class="think-right-first-child">
+                <div class="think-right-second-child"></div>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
         </div>
         <p id="message"></p>
         <p id="used"></p>
-        <p id="guessCount"></p>
+        <p id="guess-count"></p>
     </div>
 
     <script src="assets/javascript/game.js"></script>

@@ -18,8 +18,8 @@ html {
 html, body {
     font-family: "Carter One", cursive;
     letter-spacing: 2px;
-    color: #44eeee;
-    text-shadow: 2px 2px 4px #000000;
+    color: #002244;
+    text-shadow: 2px 2px 4px #999900;
     background: linear-gradient(#00ddff, #004466) no-repeat center fixed;
 }
 
@@ -58,7 +58,7 @@ h2 {
 
 h3 {
     font-size: 2em;
-    color: #00a800;
+    color: #00db00;
 }
 
 h4 {
@@ -69,7 +69,7 @@ hr {
     border-color: #00ffff;
 }
 
-#thinkLeftLg, #thinkRightLg {
+.thinkLeftLg, .thinkRightLg {
     position: relative;
     width: 128px;
     height: 64px;
@@ -81,7 +81,7 @@ hr {
     margin: 0 16px;
 }
 
-#thinkLeftMd, #thinkRightMd {
+.thinkLeftMd, .thinkRightMd {
     position: absolute;
     top: 80%;
     width: 40px;
@@ -93,15 +93,15 @@ hr {
     border-radius: 50%;
 }
 
-#thinkLeftMd, #thinkLeftSm {
+.thinkLeftMd, .thinkLeftSm {
     left: 50%;
 }
 
-#thinkRightMd, #thinkRightSm {
+.thinkRightMd, .thinkRightSm {
     right: 50%;
 }
 
-#thinkLeftSm, #thinkRightSm {
+.thinkLeftSm, .thinkRightSm {
     position: absolute;
     top: 88%;
     width: 24px;
