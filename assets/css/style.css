@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -6,20 +7,24 @@ em {
     font-style: italic;
 }
 
+strong {
+    font-weight: bold;
+}
+
 html {
     height: 100vh;
 }
 
 html, body {
-    font-family: "Shojumaru", cursive, sans-serif;
+    font-family: "Carter One", cursive;
     letter-spacing: 2px;
-    color: #00ffff;
+    color: #44eeee;
     text-shadow: 2px 2px 4px #000000;
     background: linear-gradient(#00ddff, #004466) no-repeat center fixed;
 }
 
 body {
-    width: 640px;
+    width: 720px;
     box-shadow: 4px 4px 16px #000022, 0px 0px 16px #000022;
     border: 4px solid #002266;
     margin: 64px auto;
@@ -29,7 +34,7 @@ header {
     text-align: center;
     border: 4px solid #002266;
     padding: 16px 64px;
-    background-image: radial-gradient(#004488 5%, #005599 10%, #00aacc 20%, #005599 30%, #004488 35%);
+    background-image: radial-gradient(#004488 5%, #005599 10%, #9acd32 20%, #005599 30%, #004488 35%);
 }
 
 .flex-container {
@@ -37,9 +42,31 @@ header {
     justify-content: center;
 }
 
-img {
-    width: 25%;
-    height: 25%;
+h1, h2, h3, h4, p {
+    text-align: center;
+    margin: 8px auto;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-family: "Freckle Face", cursive, sans-serif;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 2em;
+    color: #00a800;
+}
+
+h4 {
+    font-size: 0.8em;
+}
+
+hr {
+    border-color: #00ffff;
 }
 
 #thinkLeftLg, #thinkRightLg {
@@ -86,96 +113,22 @@ img {
     border-radius: 50%;
 }
 
-h1, h2, h3, h4, p {
-    text-align: center;
-    margin: 8px auto;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-family: "Italianno", cursive, sans-serif;
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.5em;
-    color: #00a800;
-}
-
-h4 {
-    font-size: 0.8em;
-}
-
-hr {
-    border-color: #00ffff;
+#wins, #losses {
+    background-color: #002266;
+    color: #00ffff;
+    padding: 8px 16px;
 }
 
 p#message {
     width: 296px;
     height: 64px;
-    line-height: 152%;
+    font-size: 0.8em;
     background: #00ffff;
     border: 1px solid #0000bb;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    padding: 16px 0;
     margin: 32px auto;
 }
 
-#scoreDisplay {
-    background: #004488;
-    line-height: 32px;
-    padding: 0 16px 0 16px;
-    border: 4px solid #002266;
-}
-
-#targetScore, #playerTotal, #wins, #losses {
-    background-color: #002266;
-    color: #00ffff;
-    padding: 2px 16px;
-}
-
-#divCanvas {
-    position: relative;
-    text-align: center;
-}
-
-#mycanvas {
-    width: 100%;
-    height: 100%;
-    border: 4px solid #002266;
-}
-
-button {
-    position: absolute;
-    cursor: pointer;
-    width: 48.5%;
-    height: 48.5%;
-    opacity: 0.15;
-    background-color: #ffffff;
-    border: none;
-    margin: 4px;
-}
-
-#button1 {
-    left: 0;
-    top: 0;
-}
-
-#button2 {
-    right: 0;
-    top: 0;
-}
-
-#button3 {
-    left: 0;
-    bottom: 0;
-}
-
-#button4 {
-    right: 0;
-    bottom: 0;
-}

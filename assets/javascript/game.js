@@ -8,7 +8,7 @@ var guessArray = [];
 var userGuess;
 
 gameSetup();
-document.querySelector("#message").innerHTML = "Waiting for a guess...";
+document.querySelector("#message").innerHTML = "WELCOME<em>!!</em><br/>Waiting For Your Guess...";
 
 function gameSetup() {
     targetLetter();
@@ -17,8 +17,8 @@ function gameSetup() {
     guessArray = [];
     document.querySelector("#wins").innerHTML = "Wins: " + wins;
     document.querySelector("#losses").innerHTML = "Losses: " + losses;
-    document.querySelector("#guessCount").innerHTML = "Guesses left: " + guessesLeft;
-    document.querySelector("#used").innerHTML = "Your guesses: " + guessArray;
+    document.querySelector("#guessCount").innerHTML = "You Have " + guessesLeft + " Guesses Left";
+    document.querySelector("#used").innerHTML = "You've Guessed: " + guessArray;
 };
 
 function targetLetter() {
@@ -28,7 +28,7 @@ function targetLetter() {
 
 function addToGuessArray() {
     guessArray.push(userGuess);
-    document.querySelector("#used").innerHTML = "Your guesses: " + guessArray + " ";
+    document.querySelector("#used").innerHTML = "You've Guessed: " + guessArray + " ";
     console.log("addToGuessArray() = " + guessArray);
 };
 
@@ -56,7 +56,7 @@ document.onkeyup = function (keyPress) {
         return;
     } else if (guessesLeft === 1 && userGuess !== computerPick) {
         losses++;
-        document.querySelector("#message").innerHTML = "You lose.<br/>Game restarted.";
+        document.querySelector("#message").innerHTML = "It was <strong>'" + computerPick + "'</strong>. You Lose.<br/>Game Restarted.";
         gameSetup();
         console.log("targetLetter() lose = " + computerPick);
     }
