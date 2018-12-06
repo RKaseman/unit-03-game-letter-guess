@@ -18,6 +18,10 @@
   - [x] increase the Losses counter
   - [x] start the game over without refreshing the page
 #
+### Nice-to-haves added
+#
+- [x] incorrect key presses are flagged and the user is warned
+#
 brought to you by:
 - **HTML**
 - **CSS**

@@ -20,11 +20,11 @@ html, body {
     letter-spacing: 2px;
     color: #002244;
     text-shadow: 2px 2px 4px #bb7700;
-    background: linear-gradient(#00ddff, #004466) no-repeat center fixed;
 }
 
 body {
     width: 720px;
+    background: linear-gradient(#22ddff, #224466) no-repeat center fixed;
     border: 16px solid #bb7700;
     border-right-color: #aa6600;
     border-bottom-color: #995500;
@@ -34,9 +34,12 @@ body {
 
 header {
     text-align: center;
-    box-shadow: 0 8px 16px #000022;
     padding: 16px 64px;
     background-image: radial-gradient(#004488 5%, #005599 10%, #9acd32 20%, #005599 30%, #004488 35%);
+}
+
+header, .think-left-parent, .think-right-parent, #message {
+    box-shadow: 0 8px 16px #000022;
 }
 
 .flex-container {
@@ -65,7 +68,7 @@ h3 {
 }
 
 h4 {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 hr {
@@ -76,14 +79,15 @@ hr {
 span {
     position: absolute;
     top: 32%;
+    font-size: 1.1em;
 }
 
 span.left {
-    left: 20%;
+    left: 18%;
 }
 
 span.right {
-    right: 20%;
+    right: 18%;
 }
 
 .think-left-parent, .think-right-parent {
@@ -91,7 +95,6 @@ span.right {
     width: 128px;
     height: 64px;
     background: #00ffff;
-    box-shadow: 0 8px 16px #000022;
     border: 1px solid #0000bb;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -142,7 +145,6 @@ span.right {
 #message {
     width: 296px;
     height: 64px;
-    font-size: 0.8em;
     background: #00ffff;
     border: 1px solid #0000bb;
     -moz-border-radius: 50%;

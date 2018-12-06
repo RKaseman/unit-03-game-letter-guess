@@ -48,7 +48,7 @@ document.onkeyup = function (keyPress) {
         gameSetup();
     } else if (guessesLeft > 1 && userGuess !== computerPick) {
         guessesLeft--;
-        document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guesses Left";
+        document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guess Left";
         addToGuessArray();
         document.querySelector("#message").innerHTML = "'" + userGuess + "'" + " is incorrect.<br/>Guess again.";
         return;
