@@ -13,6 +13,7 @@ strong {
 
 html {
     height: 100vh;
+    background: #224466;
 }
 
 html, body {
@@ -35,7 +36,7 @@ body {
 header {
     text-align: center;
     padding: 16px 64px;
-    background-image: radial-gradient(#004488 5%, #005599 10%, #9acd32 20%, #005599 30%, #004488 35%);
+    background-image: radial-gradient(#004488 5%, #005599 10%, #00db00 20%, #005599 30%, #004488 35%);
 }
 
 header, .think-left-parent, .think-right-parent, #message {
@@ -138,7 +139,7 @@ span.right {
     width: 200px;
     background-color: #002266;
     color: #00ffff;
-    box-shadow: 2px 2px 4px #bb7700;
+    box-shadow: 0 8px 16px #bb7700;
     padding: 8px 16px;
 }
 
