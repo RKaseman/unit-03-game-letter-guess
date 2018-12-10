@@ -93,7 +93,7 @@ span.right {
 
 .think-left-parent, .think-right-parent {
     position: relative;
-    width: 128px;
+    width: 20%;
     height: 64px;
     background: #00ffff;
     border: 1px solid #0000bb;
@@ -106,7 +106,7 @@ span.right {
 .think-left-first-child, .think-right-first-child {
     position: absolute;
     top: 80%;
-    width: 40px;
+    width: 42%;
     height: 24px;
     background: #00ffff;
     border: 1px solid #0000bb;
@@ -126,7 +126,7 @@ span.right {
 .think-left-second-child, .think-right-second-child {
     position: absolute;
     top: 88%;
-    width: 24px;
+    width: 56%;
     height: 16px;
     background: #00ffff;
     border: 1px solid #0000bb;
