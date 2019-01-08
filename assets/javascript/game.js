@@ -33,7 +33,7 @@ function addToGuessArray() {
 };
 
 document.onkeyup = function (keyPress) {
-    userGuess = String.fromCharCode(keyPress.keyCode).toLowerCase();
+    userGuess = keyPress.key.toLowerCase();
     console.log("userGuess = " + userGuess);
     var inArray = letters.includes(userGuess);
     console.log("inArray = " + inArray);
@@ -59,3 +59,17 @@ document.onkeyup = function (keyPress) {
     }
 };
 
+
+
+console.log(document.querySelector("#i").innerHTML);
+console.log(document.querySelector("li#u").id);
+
+document.querySelector("li").addEventListener("click", checkPress);
+
+function checkPress() {
+    var letterCheck = document.querySelector("li").id;
+    if (letterCheck === "a") {
+        console.log("ok");
+        console.log("computerPick = " + computerPick);
+    }
+}
