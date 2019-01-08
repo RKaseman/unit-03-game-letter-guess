@@ -59,17 +59,22 @@ document.onkeyup = function (keyPress) {
     }
 };
 
+console.log(document.querySelector("#e").innerHTML);
+console.log(document.querySelector("li#e").id);
+console.log(document.getElementById("buttons").querySelectorAll("li")[2].id);
 
-
-console.log(document.querySelector("#i").innerHTML);
-console.log(document.querySelector("li#u").id);
-
-document.querySelector("li").addEventListener("click", checkPress);
+document.querySelector("li#e").addEventListener("click", checkPress);
 
 function checkPress() {
-    var letterCheck = document.querySelector("li").id;
-    if (letterCheck === "a") {
-        console.log("ok");
-        console.log("computerPick = " + computerPick);
+    var letterCheck = document.querySelector("li#e", "li#i").id;
+    for (var i = 0; i < letters.length; i++) {
+        console.log("letterCheck = " + letterCheck);
+        console.log("letters[i] = " + letters[i]);
+        if (letterCheck === letters[i]) {
+            console.log("true");
+        } else {
+            console.log("false");
+        }
     }
-}
+};
+
