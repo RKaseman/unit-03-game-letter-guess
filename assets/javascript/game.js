@@ -54,23 +54,34 @@ document.onkeyup = function (keyPress) {
         return;
     } else if (guessesLeft === 1 && userGuess !== computerPick) {
         losses++;
-        document.querySelector("#message").innerHTML = "It was <strong>'" + computerPick + "'</strong>. You Lose.<br/>Game Restarted.";
+        document.querySelector("#message").innerHTML = "It was <strong>'" + computerPick + "'</strong>.<br/>Game Restarted.";
         gameSetup();
     }
 };
 
-console.log(document.querySelector("#e").innerHTML);
-console.log(document.querySelector("li#e").id);
-console.log(document.getElementById("buttons").querySelectorAll("li")[2].id);
+console.log(document.getElementById("buttons").querySelectorAll("li"));
 
-document.querySelector("li#e").addEventListener("click", checkPress);
+// document.querySelector("li#e").addEventListener("click", checkPressed);
 
-function checkPress() {
-    var letterCheck = document.querySelector("li#e", "li#i").id;
+var test = document.getElementById("buttons").querySelectorAll("li");
+var j;
+for (j = 0; j < test.length; j++) {
+    // document.querySelector(test[j]).addEventListener("click", checkPressed);
+    test[j].addEventListener("click", checkPressed);
+    console.log("test[j].innerHTML = " + test[j].innerHTML);
+    console.log("test[j].id = " + test[j].id);
+    // console.log("var j = " + j);
+}
+
+function checkPressed() {
+    // var letterCheck = document.getElementById("buttons").querySelectorAll("li");
+    console.log("this = " + this.id);
+    var i;
     for (var i = 0; i < letters.length; i++) {
-        console.log("letterCheck = " + letterCheck);
+        // console.log("letterCheck = " + letterCheck);
         console.log("letters[i] = " + letters[i]);
-        if (letterCheck === letters[i]) {
+        console.log("var i = " + i);
+        if (this.id === letters[i]) {
             console.log("true");
         } else {
             console.log("false");
