@@ -59,32 +59,26 @@ document.onkeyup = function (keyPress) {
     }
 };
 
-console.log(document.getElementById("buttons").querySelectorAll("li"));
-
-// document.querySelector("li#e").addEventListener("click", checkPressed);
-
-var test = document.getElementById("buttons").querySelectorAll("li");
-var j;
-for (j = 0; j < test.length; j++) {
-    // document.querySelector(test[j]).addEventListener("click", checkPressed);
-    test[j].addEventListener("click", checkPressed);
-    console.log("test[j].innerHTML = " + test[j].innerHTML);
-    console.log("test[j].id = " + test[j].id);
-    // console.log("var j = " + j);
+var listItems = document.getElementById("buttons").querySelectorAll("li");
+var i;
+for (i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener("click", checkPressed);
 }
 
 function checkPressed() {
-    // var letterCheck = document.getElementById("buttons").querySelectorAll("li");
-    console.log("this = " + this.id);
-    var i;
-    for (var i = 0; i < letters.length; i++) {
-        // console.log("letterCheck = " + letterCheck);
-        console.log("letters[i] = " + letters[i]);
-        console.log("var i = " + i);
-        if (this.id === letters[i]) {
-            console.log("true");
+    userGuess = this.id;
+    addToGuessArray();
+    console.log("userGuess = " + userGuess);
+    console.log("this.id = " + this.id);
+    var j;
+    for (var j = 0; j < letters.length; j++) {
+        console.log("this.id === letters[j] =", this.id === letters[j]);
+        if (this.id === computerPick) {
+            console.log("this.id === computerPick =", this.id === computerPick);
+            console.log("if true");
         } else {
-            console.log("false");
+            document.getElementById(this.id).style.color = "red";
+            console.log("else false");
         }
     }
 };

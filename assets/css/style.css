@@ -34,9 +34,9 @@ body {
 }
 
 header {
+    background-image: radial-gradient(#004488 5%, #005599 10%, #224466 20%, #005599 30%, #004488 35%);
     text-align: center;
     padding: 16px 64px;
-    background-image: radial-gradient(#004488 5%, #005599 10%, #00db00 20%, #005599 30%, #004488 35%);
 }
 
 header, .think-left-parent, .think-right-parent, #message {
@@ -64,7 +64,7 @@ h2 {
 
 h3 {
     font-size: 2em;
-    color: #00db00;
+    color: #00ec00;
     margin: 32px auto;
 }
 
@@ -74,7 +74,7 @@ h4 {
 
 hr {
     width: 32px;
-    border-color: #00db00;
+    border-color: #00ec00;
 }
 
 span {
@@ -155,7 +155,15 @@ span.right {
     margin: 32px auto;
 }
 
+ul {
+    background-color: #004488;
+    box-shadow: 0 -8px 16px #000022;
+    margin-top: 32px;
+}
+
 li {
     cursor: pointer;
+    font-size: 6em;
+    margin: 0 auto;
 }
 
