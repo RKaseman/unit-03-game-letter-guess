@@ -21,6 +21,7 @@
 ### Nice-to-haves added
 #
 - [x] incorrect key presses are flagged and the user is warned
+- [x] on-screen selection buttons that change state
 #
 brought to you by:
 - **HTML**
