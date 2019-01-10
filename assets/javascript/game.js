@@ -84,7 +84,7 @@ function styleReset() {
     }
 }
 
-// adds listener to each letter's li item
+// adds listener to each letter's li element
 var listItems = document.getElementById("buttons").querySelectorAll("li");
 var i;
 for (i = 0; i < listItems.length; i++) {
@@ -93,10 +93,6 @@ for (i = 0; i < listItems.length; i++) {
 
 function checkPressed() {
     userGuess = this.id;
-    // addToGuessArray();
-    console.log("userGuess = " + userGuess);
-    console.log("this.id = " + this.id);
-    console.log("event.target.innerHTML = " + event.target.innerHTML);
     var j;
     for (var j = 0; j < listItems.length; j++) {
         if (userGuess === computerPick) {
@@ -104,7 +100,7 @@ function checkPressed() {
             win();
             return;
         } else if (guessesLeft > 1 && userGuess !== computerPick) {
-            document.getElementById(userGuess).style.opacity = "0.5";
+            document.getElementById(userGuess).style.opacity = "0.25";
             wrongGuess();
             return;
         } else if (guessesLeft === 1 && userGuess !== computerPick) {
