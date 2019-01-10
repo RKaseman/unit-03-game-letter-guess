@@ -69,7 +69,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 hr {
@@ -91,15 +91,20 @@ span.right {
     right: 18%;
 }
 
-.think-left-parent, .think-right-parent {
-    position: relative;
-    width: 20%;
-    height: 64px;
-    background: #00ffff;
+.think-left-parent, .think-right-parent,
+.think-left-first-child, .think-right-first-child,
+.think-left-second-child, .think-right-second-child {
+    background: #00eeee;
     border: 1px solid #0000bb;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+}
+
+.think-left-parent, .think-right-parent {
+    position: relative;
+    width: 20%;
+    height: 64px;
     margin: 32px 16px;
 }
 
@@ -108,11 +113,13 @@ span.right {
     top: 80%;
     width: 42%;
     height: 24px;
-    background: #00ffff;
-    border: 1px solid #0000bb;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+}
+
+.think-left-second-child, .think-right-second-child {
+    position: absolute;
+    top: 88%;
+    width: 56%;
+    height: 16px;
 }
 
 .think-left-first-child, .think-left-second-child {
@@ -123,35 +130,23 @@ span.right {
     right: 50%;
 }
 
-.think-left-second-child, .think-right-second-child {
-    position: absolute;
-    top: 88%;
-    width: 56%;
-    height: 16px;
-    background: #00ffff;
-    border: 1px solid #0000bb;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
 #wins, #losses {
     width: 200px;
     background-color: #002266;
-    color: #00ffff;
+    color: #00eeee;
     box-shadow: 0 8px 16px #bb7700;
     padding: 8px 16px;
 }
 
 #message {
     width: 296px;
-    height: 64px;
-    background: #00ffff;
+    height: 96px;
+    background: #00eeee;
     border: 1px solid #0000bb;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    padding: 16px 0;
+    padding: 24px 0;
     margin: 32px auto;
 }
 
@@ -164,6 +159,8 @@ ul {
 li {
     cursor: pointer;
     font-size: 6em;
+    color: #00eeee;
+    text-shadow: 2px 2px 4px #000022;
     margin: 0 auto;
 }
 

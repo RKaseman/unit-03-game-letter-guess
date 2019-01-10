@@ -20,10 +20,18 @@
 #
 ### Nice-to-haves added
 #
-- [x] incorrect key presses are flagged and the user is warned
-- [x] on-screen selection buttons that change state
+- [x] invalid key presses are flagged and the user is warned
+- [x] on-screen selection buttons that change state with either keyboard or on-screen activation
 #
 brought to you by:
 - **HTML**
 - **CSS**
 - **JavaScript**
+#
+I always keep RWD and media queries in mind.
+
+There are none on this project. They wouldn't help the design.
+
+The game is fully functional.
+
+This is a period of time I can experiment freely and without deadlines, so that's what I'm doing. For this project I read a lot about the difference between getElementByID() and querySelector().
