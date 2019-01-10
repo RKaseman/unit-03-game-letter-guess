@@ -6,9 +6,10 @@ var losses = 0;
 var guessesLeft = 2;
 var guessArray = [];
 var userGuess;
+var message = document.querySelector("#message");
 
 gameSetup();
-document.querySelector("#message").innerHTML = "WELCOME<em>!!</em><br/>Waiting For Your Guess...";
+message.innerHTML = "WELCOME<em>!!</em><br/>Tap Or Enter A Guess...";
 
 function gameSetup() {
     targetLetter();
@@ -17,8 +18,8 @@ function gameSetup() {
     guessArray = [];
     document.querySelector("#wins").innerHTML = "Wins<hr/>" + wins;
     document.querySelector("#losses").innerHTML = "Losses<hr/>" + losses;
-    document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guesses Left";
-    document.querySelector("#used").innerHTML = "You've Guessed: " + guessArray;
+    document.querySelector("#guess-count").innerHTML = "You Have<br/>" + guessesLeft + " Guesses Left";
+    document.querySelector("#used").innerHTML = "<strong>Waiting For<br/>Your Guess</strong>";
 };
 
 function targetLetter() {
@@ -28,57 +29,88 @@ function targetLetter() {
 
 function addToGuessArray() {
     guessArray.push(userGuess);
-    document.querySelector("#used").innerHTML = "You've Guessed: " + guessArray;
+    document.querySelector("#used").innerHTML = "You've Guessed:<br/>" + guessArray;
     console.log("addToGuessArray() = " + guessArray);
+};
+
+function notVowel() {
+    message.innerHTML = "'" + userGuess + "'" + " is not a vowel.<br/>Guess again.";
+    return;
+};
+
+function win() {
+    wins++;
+    message.innerHTML = "Win <em>!!</em><br/>(but you're not psychic).";
+    gameSetup();
+};
+
+function wrongGuess() {
+    guessesLeft--;
+    document.querySelector("#guess-count").innerHTML = "You Have<br/>" + guessesLeft + " Guess Left";
+    message.innerHTML = "'" + userGuess + "'" + " is incorrect.<br/>Guess again.";
+    addToGuessArray();
+    return;
+};
+
+function loss() {
+    losses++;
+    message.innerHTML = "It was <strong>'" + computerPick + "'</strong>.<br/>Game Restarted.";
+    gameSetup();
+};
+
+function matchLogic() {
+    var inArray = letters.includes(userGuess);
+    console.log("inArray = " + inArray);
+    if (inArray === false) {
+        notVowel();
+    } else if (guessesLeft > 0 && userGuess === computerPick) {
+        win();
+    } else if (guessesLeft > 1 && userGuess !== computerPick) {
+        wrongGuess();
+    } else if (guessesLeft === 1 && userGuess !== computerPick) {
+        loss();
+    }
 };
 
 document.onkeyup = function (keyPress) {
     userGuess = keyPress.key.toLowerCase();
     console.log("userGuess = " + userGuess);
-    var inArray = letters.includes(userGuess);
-    console.log("inArray = " + inArray);
-
-    if (inArray === false) {
-        document.querySelector("#message").innerHTML = "'" + userGuess + "'" + " is not a vowel.<br/>Guess again.";
-        return;
-    } else if (guessesLeft > 0 && userGuess === computerPick) {
-        addToGuessArray();
-        wins++;
-        document.querySelector("#message").innerHTML = "Win <em>!!</em><br/>(but you're not psychic).";
-        gameSetup();
-    } else if (guessesLeft > 1 && userGuess !== computerPick) {
-        guessesLeft--;
-        document.querySelector("#guess-count").innerHTML = "You Have " + guessesLeft + " Guess Left";
-        addToGuessArray();
-        document.querySelector("#message").innerHTML = "'" + userGuess + "'" + " is incorrect.<br/>Guess again.";
-        return;
-    } else if (guessesLeft === 1 && userGuess !== computerPick) {
-        losses++;
-        document.querySelector("#message").innerHTML = "It was <strong>'" + computerPick + "'</strong>.<br/>Game Restarted.";
-        gameSetup();
-    }
+    matchLogic();
 };
 
+function styleReset() {
+    for (var k = 0; k < guessArray.length; k++) {
+        document.getElementById(guessArray[k]).style.opacity = "1.0";
+    }
+}
+
+// adds listener to each letter's li item
 var listItems = document.getElementById("buttons").querySelectorAll("li");
 var i;
 for (i = 0; i < listItems.length; i++) {
     listItems[i].addEventListener("click", checkPressed);
-}
+};
 
 function checkPressed() {
     userGuess = this.id;
-    addToGuessArray();
+    // addToGuessArray();
     console.log("userGuess = " + userGuess);
     console.log("this.id = " + this.id);
+    console.log("event.target.innerHTML = " + event.target.innerHTML);
     var j;
-    for (var j = 0; j < letters.length; j++) {
-        console.log("this.id === letters[j] =", this.id === letters[j]);
-        if (this.id === computerPick) {
-            console.log("this.id === computerPick =", this.id === computerPick);
-            console.log("if true");
-        } else {
-            document.getElementById(this.id).style.color = "red";
-            console.log("else false");
+    for (var j = 0; j < listItems.length; j++) {
+        if (userGuess === computerPick) {
+            styleReset();
+            win();
+            return;
+        } else if (guessesLeft > 1 && userGuess !== computerPick) {
+            document.getElementById(userGuess).style.opacity = "0.5";
+            wrongGuess();
+            return;
+        } else if (guessesLeft === 1 && userGuess !== computerPick) {
+            styleReset();
+            loss();
+            return;
         }
     }
 };
