@@ -1,6 +1,6 @@
 # unit-03-game-psychic
 
-[Are You Psychic? - A Letter Guess Game](https://rkaseman.github.io/unit-03-game-psychic/)
+[Are You Psychic? - A Letter Guess Game](https://rkaseman.github.io/unit-03-game-letter-guess/)
 
 - [x] Browser-based interactive game
 - [x] the app randomly picks a letter
