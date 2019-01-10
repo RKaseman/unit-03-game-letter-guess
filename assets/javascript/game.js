@@ -18,7 +18,6 @@ function gameSetup() {
         document.getElementById(guessArray[k]).style.opacity = "1.0";
     }
     targetLetter();
-    console.log("targetLetter() = " + computerPick);
     guessesLeft = 2;
     guessArray = [];
     document.querySelector("#wins").innerHTML = "Wins<hr/>" + wins;
@@ -37,7 +36,6 @@ function targetLetter() {
 function addToGuessArray() {
     guessArray.push(userGuess);
     document.querySelector("#used").innerHTML = "You've Guessed:<br/>" + guessArray;
-    console.log("addToGuessArray() = " + guessArray);
 };
 
 // inform if the letter picked isn't a vowel
@@ -72,7 +70,6 @@ function loss() {
 // check if userGuess is in letters array, then check against guessesLeft & computerPick
 function matchLogic() {
     var inArray = letters.includes(userGuess);
-    console.log("inArray = " + inArray);
     if (inArray === false) {
         notVowel();
     } else if (guessesLeft > 0 && userGuess === computerPick) {
@@ -88,7 +85,6 @@ function matchLogic() {
 // grab the keyboard key pressed and convert it to lower case
 document.onkeyup = function (keyPress) {
     userGuess = keyPress.key.toLowerCase();
-    console.log("userGuess (kb) = " + userGuess);
     matchLogic();
 };
 
@@ -102,7 +98,6 @@ for (i = 0; i < listItems.length; i++) {
 // grab the id of the li element clicked and check against guessesLeft & computerPick
 function checkPressed() {
     userGuess = this.id;
-    console.log("userGuess (click) = " + userGuess);
     var j;
     for (var j = 0; j < listItems.length; j++) {
         if (userGuess === computerPick) {
