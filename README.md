@@ -2,7 +2,7 @@
 
 [Are You Psychic? - A Letter Guess Game](https://rkaseman.github.io/unit-03-game-letter-guess/)
 
-- [x] Browser-based interactive game
+- [x] Browser-based game
 - [x] the app randomly picks a letter
 - [x] the user has to guess which letter the app chose
 - [x] Put the following text on your page
