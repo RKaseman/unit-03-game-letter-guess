@@ -89,23 +89,23 @@ hr {
 
 .think-left-parent, .think-right-parent {
     position: relative;
-    width: 152px;
+    min-width: 128px;
     height: 64px;
     margin: 32px 16px;
 }
 
 span {
     position: absolute;
-    top: 20px;
+    top: 36%;
     font-size: 1.2em;
 }
 
 span.left {
-    left: 18px;
+    left: 24%;
 }
 
 span.right {
-    right: 18px;
+    right: 24%;
 }
 
 .think-left-first-child, .think-right-first-child {
