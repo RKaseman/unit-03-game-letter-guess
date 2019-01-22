@@ -28,10 +28,8 @@ brought to you by:
 - **CSS**
 - **JavaScript**
 #
-I always keep RWD and media queries in mind.
-
-There are none on this project. They wouldn't help the design.
+I always keep RWD and media queries in mind. I wrote as few as I felt I could get away with to try and be as unobtrusive about it as possible.
 
 The game is fully functional.
 
-This is a period of time I can experiment freely and without deadlines, so that's what I'm doing. For this project I read a lot about the difference between getElementByID() and querySelector().
+For this project I read a lot about the difference between getElementByID() and querySelector().
