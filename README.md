@@ -31,4 +31,6 @@ I always keep RWD and media queries in mind. I wrote as few as I felt I could ge
 
 The game is fully functional.
 
-For this project I read a lot about the difference between getElementByID() and querySelector() and opinions about its usage.
+For this project I read a lot about the difference between getElementByID() and querySelector() and opinions about usage.
+
+P.S. if psychics existed they wouldn't behave altruistically toward the rest of us and invent excuses explaining why they're compelled to do so or otherwise prohibited from massive gains due to their ability. They'd become a ruling class of humans who take over and never let go. (After all, they'd see every threat coming. Right?) *You* would. *I* would. *They* don't because they're liars, parasites, and frauds -- not "gifted". For everyone who believes them: please stop.
