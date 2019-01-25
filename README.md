@@ -6,11 +6,11 @@
 - [x] the app randomly picks a letter
 - [x] the user has to guess which letter the app chose
 - [x] Put the following text on your page
-  - [x] Guess what letter I'm thinking of
-  - [x] Wins
-  - [x] Losses
-  - [x] Guesses Left
-  - [x] Your Guesses So Far
+  - [x] "Guess what letter I'm thinking of"
+  - [x] "Wins"
+  - [x] "Losses"
+  - [x] "Guesses Left"
+  - [x] "Your Guesses So Far"
 - [x] When the player wins
   - [x] increase the Wins counter
   - [x] start the game over without refreshing the page
@@ -18,8 +18,7 @@
   - [x] increase the Losses counter
   - [x] start the game over without refreshing the page
 #
-### Nice-to-haves added
-#
+### Nice-to-haves added:
 - [x] invalid key presses are flagged and the user is warned
 - [x] on-screen selection buttons that change state with either keyboard or on-screen activation
 #
@@ -32,4 +31,4 @@ I always keep RWD and media queries in mind. I wrote as few as I felt I could ge
 
 The game is fully functional.
 
-For this project I read a lot about the difference between getElementByID() and querySelector().
+For this project I read a lot about the difference between getElementByID() and querySelector() and opinions about its usage.
